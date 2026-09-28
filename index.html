@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario - VALORANT</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+
+<body>
+
+    <!-- Título y logo -->
+    <div class="titulo">
+        <img src="pachamanca.png" alt="Logo de VALORANT">
+        <h1>FORMULARIO</h1>
+
+    </div>
+
+    <form action="proceso.php" method="post" enctype="multipart/form-data">
+
+        <!-- Grupo 1: Datos del jugador -->
+        <fieldset>
+            <legend>DATOS DEL JUGADOR</legend>
+
+            <label for="usuario">Riot ID</label>
+            <input type="text" id="usuario" name="usuario"
+                   placeholder="Ejemplo: Player#1234" required>
+            <br><br>
+
+            <label for="mail">Correo electrónico</label>
+            <input type="email" id="mail" name="mail"
+                   placeholder="correo@ejemplo.com" required>
+            <br><br>
+
+            <label for="telefono">Número de contacto</label>
+            <input type="tel" id="telefono" name="telefono"
+                   placeholder="987654321">
+            <br><br>
+
+            <label for="servidor">Región / Servidor</label>
+            <input type="search" id="servidor" name="servidor"
+                   placeholder="Ejemplo: Latinoamérica">
+            <br>
+        </fieldset>
+
+        <br>
+
+        <!-- Grupo 2: Nivel y experiencia -->
+        <fieldset>
+            <legend>NIVEL Y EXPERIENCIA</legend>
+
+            <label for="nivel">Nivel de cuenta</label>
+            <input type="number" id="nivel" name="nivel"
+                   min="1" max="500"
+                   placeholder="Ejemplo: 25">
+            <br><br>
+
+            <label for="habilidad">Nivel de habilidad</label>
+            <input type="range" id="habilidad" name="habilidad"
+                   min="1" max="10" value="5">
+            <br><br>
+
+            <label for="experiencia">Experiencia jugando</label>
+            <select id="experiencia" name="experiencia">
+                <option value="">Selecciona una opción</option>
+                <option value="menos_1">Menos de 1 año</option>
+                <option value="1_2">Entre 1 y 2 años</option>
+                <option value="2_3">Entre 2 y 3 años</option>
+                <option value="mas_3">Más de 3 años</option>
+            </select>
+        </fieldset>
+
+        <br>
+
+        <!-- Grupo 3: Preferencias de juego -->
+        <fieldset>
+            <legend>PREFERENCIAS DE JUEGO</legend>
+
+            <p>Modo de juego favorito</p>
+
+            <label for="competitivo">Competitivo</label>
+            <input type="radio" id="competitivo"
+                   name="modo" value="competitivo">
+            <br>
+
+            <label for="normal">No competitivo</label>
+            <input type="radio" id="normal"
+                   name="modo" value="normal">
+            <br>
+
+            <label for="swiftplay">Swiftplay</label>
+            <input type="radio" id="swiftplay"
+                   name="modo" value="swiftplay">
+            <br><br>
+
+            <p>¿Qué te gusta hacer en VALORANT?</p>
+
+            <label for="jugar_equipo">Jugar en equipo</label>
+            <input type="checkbox" id="jugar_equipo"
+                   name="interes[]" value="jugar en equipo">
+            <br>
+
+            <label for="mejorar">Mejorar mis habilidades</label>
+            <input type="checkbox" id="mejorar"
+                   name="interes[]" value="mejorar habilidades">
+            <br>
+
+            <label for="conocer_jugadores">Conocer otros jugadores</label>
+            <input type="checkbox" id="conocer_jugadores"
+                   name="interes[]" value="conocer jugadores">
+            <br>
+
+            <label for="competir">Jugar partidas competitivas</label>
+            <input type="checkbox" id="competir"
+                   name="interes[]" value="competir">
+            <br><br>
+
+            <label for="rol">Mi rol preferido</label>
+            <input type="text" id="rol" name="rol"
+                   list="lista"
+                   placeholder="Selecciona o escribe un rol">
+
+            <datalist id="lista">
+                <option value="Duelista">
+                <option value="Centinela">
+                <option value="Iniciador">
+                <option value="Controlador">
+            </datalist>
+
+            <br><br>
+
+            <label for="agente">Agente favorito</label>
+            <input type="text" id="agente" name="agente"
+                   placeholder="Ejemplo: Jett">
+
+        </fieldset>
+
+        <br>
+
+        <!-- Grupo 4: Información de juego -->
+        <fieldset>
+            <legend>INFORMACIÓN DE JUEGO</legend>
+
+            <label for="fecha">Fecha en la que empezaste a jugar</label>
+            <input type="date" id="fecha" name="fecha">
+            <br><br>
+
+            <label for="hora">Horario habitual para jugar</label>
+            <input type="time" id="hora" name="hora">
+            <br><br>
+
+            <label for="fecha-hora">Fecha y hora de tu próxima partida</label>
+            <input type="datetime-local" id="fecha-hora" name="fecha-hora">
+            <br>
+        </fieldset>
+
+        <br>
+
+        <!-- Grupo 5: Mejores jugadas -->
+        <fieldset>
+            <legend>TUS MEJORES JUGADAS</legend>
+
+            <label for="archivo">Sube una de tus mejores jugadas</label>
+            <input type="file" id="archivo" name="archivo"
+                   accept="video/*">
+            <br><br>
+
+            <label for="descripcion">Describe tu mejor jugada</label>
+            <br>
+
+            <textarea id="descripcion" name="descripcion"
+                      rows="5" cols="60"
+                      placeholder="Cuéntanos qué ocurrió en tu mejor jugada..."></textarea>
+            <br>
+        </fieldset>
+
+        <br>
+
+        <!-- Grupo 6: Experiencia -->
+        <fieldset>
+            <legend>SOBRE TU EXPERIENCIA EN VALORANT</legend>
+
+            <label for="biografia">Cuéntanos sobre ti como jugador</label>
+            <br>
+
+            <textarea id="biografia" name="biografia"
+                      rows="6" cols="60"
+                      placeholder="¿Qué te gusta de VALORANT? ¿Cuál es tu agente favorito? ¿Qué quieres mejorar?"></textarea>
+            <br>
+        </fieldset>
+
+        <br>
+
+        <!-- Botones -->
+        <div class="botones">
+            <input type="reset" value="Limpiar formulario">
+            <input type="submit" value="Enviar formulario">
+        </div>
+
+    </form>
+
+</body>
+</html>
